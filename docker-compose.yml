@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  openvpn:
+    build: .
+    container_name: openvpn-server
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./openvpn-data:/etc/openvpn
+    ports:
+      - "1194:1194/udp"
+    restart: always

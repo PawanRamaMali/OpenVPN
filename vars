@@ -1,0 +1,9 @@
+export KEY_COUNTRY="US"
+export KEY_PROVINCE="CA"
+export KEY_CITY="SanFrancisco"
+export KEY_ORG="MyOrganization"
+export KEY_EMAIL="myemail@example.com"
+export KEY_OU="MyOrganizationalUnit"
+
+export KEY_NAME="MyVPN"
+export KEY_CN="MyVPN_CA"
