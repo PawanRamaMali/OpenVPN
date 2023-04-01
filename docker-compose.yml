@@ -8,6 +8,7 @@ services:
       - NET_ADMIN
     volumes:
       - ./openvpn-data:/etc/openvpn
+      - ./certs:/certs
     ports:
       - "1194:1194/udp"
     restart: always
