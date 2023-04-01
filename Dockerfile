@@ -27,9 +27,19 @@ RUN cd /etc/openvpn/easyrsa && \
 
 # Copy the OpenVPN server configuration file
 COPY server.conf /etc/openvpn/server.conf
-
+RUN chmod +x /etc/openvpn/server.conf
 # Expose the OpenVPN server port
 EXPOSE 1194/udp
 
+RUN ls -la /etc/openvpn/
+
 # Run the OpenVPN server
-CMD ["openvpn", "--config", "/etc/openvpn/server.conf"]
+#CMD ["openvpn", "--config", "/etc/openvpn/server.conf"]
+#CMD ["openvpn", "--cd", "/etc/openvpn/"]
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+
+
